@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Pathway Devs delivers elite systems architecture, custom AI automation, customized SOP templates, and high-end CRM integrations for midsized businesses. Privacy and compliance minded.">
+    <meta name="keywords" content="Systems Architecture, AI Automation, Business SOPs, CRM Integration, Custom Templates, Privacy Compliance, Tech Consulting">
+    <title>Pathway Devs | Elite Systems Architecture & AI Automation</title>
+    <style>
+        :root {
+            --bg-dark: #09050e;
+            --bg-card: #140d1f;
+            --maroon: #4a0e17;
+            --purple-deep: #25123e;
+            --neon-green: #39ff14;
+            --light-grey: #d1d1d6;
+            --bronze: #d4af37;
+            --bronze-dark: #8c6d23;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--light-grey);
+            line-height: 1.6;
+            overflow-x: hidden;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .motto-bar {
+            background: linear-gradient(90deg, var(--maroon), var(--purple-deep));
+            color: var(--bronze);
+            text-align: center;
+            padding: 8px 10px;
+            font-size: 0.85rem;
+            letter-spacing: 4px;
+            font-weight: bold;
+            text-transform: uppercase;
+            border-bottom: 1px solid var(--bronze-dark);
+        }
+
+        header {
+            background-color: rgba(9, 5, 14, 0.95);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(57, 255, 20, 0.2);
+            padding: 15px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-img {
+            width: 50px;
+            height: auto;
+            border-radius: 50%;
+            border: 1px solid var(--bronze);
+        }
+
+        .brand-name {
+            color: #ffffff;
+            font-size: 1.5rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+
+        .brand-name span {
+            color: var(--neon-green);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        nav a {
+            color: var(--light-grey);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+            text-transform: uppercase;
+            cursor: pointer;
+        }
+
+        nav a.active, nav a:hover {
+            color: var(--neon-green);
+        }
+
+        .page-content {
+            display: none;
+            flex: 1;
+        }
+
+        .page-content.active-page {
+            display: block;
+        }
+
+        .hero {
+            padding: 140px 5% 110px 5%;
+            text-align: center;
+            background-color: var(--bg-dark);
+            background-image:
+                linear-gradient(180deg, rgba(9, 5, 14, 0.55) 0%, rgba(9, 5, 14, 0.72) 55%, rgba(9, 5, 14, 0.92) 100%),
+                url('crest-wide.jpg');
+            background-size: cover;
+            background-position: center 40%;
+            background-repeat: no-repeat;
+        }
+
+        .promo-badge {
+            background-color: var(--maroon);
+            color: var(--neon-green);
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 25px;
+            border: 1px solid var(--neon-green);
+            text-transform: uppercase;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            color: #fff;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero h1 span {
+            color: transparent;
+            background: linear-gradient(45deg, var(--bronze), var(--neon-green));
+            -webkit-background-clip: text;
+            background-clip: text;
+        }
+
+        .hero p {
+            max-width: 800px;
+            margin: 0 auto 40px auto;
+            font-size: 1.2rem;
+            color: #b3b3b3;
+        }
+
+        .cta-btn {
+            background-color: transparent;
+            color: var(--neon-green);
+            border: 2px solid var(--neon-green);
+            padding: 14px 32px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .cta-btn:hover {
+            background-color: var(--neon-green);
+            color: var(--bg-dark);
+            box-shadow: 0 0 15px var(--neon-green);
+        }
+
+        .section {
+            padding: 60px 5% 80px 5%;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .section-title span {
+            color: var(--bronze);
+        }
+
+        .text-container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: var(--bg-card);
+            border-left: 4px solid var(--maroon);
+            padding: 40px;
+            border-radius: 4px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .card {
+            background-color: var(--bg-card);
+            border: 1px solid rgba(255,255,255,0.05);
+            padding: 30px;
+            border-radius: 6px;
+        }
+
+        .card h3 {
+            color: var(--bronze);
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        .app-card {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            min-height: 220px;
+        }
+
+        .app-card .app-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            align-items: center;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 4px 10px;
+            border-radius: 50px;
+            font-size: 0.7rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .badge-live {
+            color: var(--bg-dark);
+            background: var(--neon-green);
+        }
+
+        .badge-dev {
+            color: var(--bronze);
+            background: rgba(212, 175, 55, 0.12);
+            border: 1px solid var(--bronze-dark);
+        }
+
+        .est-date {
+            font-size: 0.8rem;
+            color: #9a9aa3;
+            letter-spacing: 0.5px;
+        }
+
+        .app-card p {
+            flex: 1;
+        }
+
+        .francesca-widget {
+            background: rgba(0, 0, 0, 0.45);
+            border: 1px solid var(--neon-green);
+            border-radius: 8px;
+            padding: 22px 20px;
+            text-align: center;
+        }
+
+        .francesca-widget h3 {
+            color: var(--neon-green);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+        }
+
+        .francesca-widget p {
+            color: #b3b3b3;
+            font-size: 0.95rem;
+            margin-bottom: 16px;
+        }
+
+        .francesca-slot {
+            min-height: 90px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px dashed rgba(57, 255, 20, 0.35);
+            border-radius: 6px;
+            color: var(--bronze);
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .control-room {
+            max-width: 700px;
+            margin: 0 auto;
+            background: linear-gradient(135deg, var(--bg-card) 0%, var(--purple-deep) 100%);
+            padding: 40px 30px;
+            border-radius: 8px;
+            border: 1px solid var(--bronze-dark);
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .action-button {
+            display: block;
+            width: 100%;
+            padding: 18px;
+            background: rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(214, 175, 55, 0.3);
+            border-radius: 4px;
+            color: #fff;
+            font-size: 1.1rem;
+            font-weight: bold;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s;
+            text-align: center;
+        }
+
+        .action-button:hover {
+            border-color: var(--neon-green);
+            background: rgba(57, 255, 20, 0.05);
+            color: var(--neon-green);
+            box-shadow: 0 0 10px rgba(57, 255, 20, 0.1);
+        }
+
+        .action-button.primary-glow {
+            border-color: var(--neon-green);
+            background: rgba(57, 255, 20, 0.08);
+            color: var(--neon-green);
+        }
+
+        .action-button.primary-glow:hover {
+            background: var(--neon-green);
+            color: var(--bg-dark);
+            box-shadow: 0 0 15px var(--neon-green);
+        }
+
+        .source-tracker {
+            margin-top: 15px;
+            background: rgba(0,0,0,0.3);
+            padding: 20px;
+            border-radius: 4px;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .source-tracker label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+            text-transform: uppercase;
+            color: var(--bronze);
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+        }
+
+        .source-tracker select {
+            width: 100%;
+            padding: 12px;
+            background: var(--bg-dark);
+            border: 1px solid var(--maroon);
+            color: #fff;
+            border-radius: 4px;
+            font-size: 1rem;
+            outline: none;
+        }
+
+        .source-tracker select:focus {
+            border-color: var(--neon-green);
+        }
+
+        .gatekeeper-footer {
+            color: var(--bronze);
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 0.95rem;
+            letter-spacing: 1px;
+            margin-top: 10px;
+            text-align: center;
+        }
+
+        .form-page-container {
+            max-width: 850px;
+            margin: 30px auto 0 auto;
+            background: rgba(0, 0, 0, 0.4);
+            padding: 15px;
+            border-radius: 6px;
+            border: 1px solid rgba(57, 255, 20, 0.15);
+        }
+
+        footer {
+            background-color: #050308;
+            text-align: center;
+            padding: 30px;
+            font-size: 0.85rem;
+            color: #666;
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+
+        footer a {
+            color: var(--bronze);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: var(--neon-green);
+        }
+
+        .policy-frame-wrap {
+            width: 100%;
+            max-width: 920px;
+            margin: 0 auto;
+            background: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid rgba(212, 175, 55, 0.35);
+        }
+
+        .policy-frame-wrap iframe {
+            display: block;
+            width: 100%;
+            min-height: 720px;
+            border: 0;
+            background: #fff;
+        }
+
+        @media (max-width: 768px) {
+            header { flex-direction: column; gap: 15px; }
+            nav ul { flex-wrap: wrap; justify-content: center; gap: 15px; }
+            .hero h1 { font-size: 2.2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="motto-bar">
+        SCIRMEN &bull; ENECH &bull; TRIUWA &bull; AITHGHEN
+    </div>
+
+    <header>
+        <div class="logo-container">
+            <img src="1063.jpg" alt="Pathway Devs Crest Logo" class="logo-img">
+            <div class="brand-name">Pathway <span>Devs</span></div>
+        </div>
+        <nav>
+            <ul>
+                <li><a onclick="showPage('landing')" id="nav-landing" class="active">Home</a></li>
+                <li><a onclick="showPage('offerings')" id="nav-offerings">What We Offer & Why</a></li>
+                <li><a onclick="showPage('apps')" id="nav-apps">Apps</a></li>
+                <li><a onclick="showPage('about')" id="nav-about">About Us</a></li>
+                <li><a onclick="showPage('contact')" id="nav-contact">Contact Room</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div id="page-landing" class="page-content active-page">
+        <section class="hero">
+            <div class="promo-badge">Next 2 Accounts Signed Up Are 50% Off</div>
+            <h1>Personalized Treatment.<br><span>Big Corporate Results.</span></h1>
+            <p>We investigate every possible business angle with our specialized pattern recognition hardware: the owner. Radical technical optimization designed to dominate your industry market landscape.</p>
+            <button onclick="showPage('contact')" class="cta-btn">Initialize Connection Profile</button>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">Operational <span>Overview</span></h2>
+            <div class="text-container">
+                <p>
+                    Pathway Devs is an elite technical consulting powerhouse built entirely around a singular operational philosophy: delivering massive, uncompromising corporate results through hyper-personalized, tactical execution. We specialize in high-end systems architecture consulting tailored specifically for mid-sized businesses hungry for institutional-grade scaling. We do not offer cookie-cutter solutions or high-level academic theory. Instead, we deep-dive directly into the unique architecture of your enterprise workflows to uncover operational leaks, eliminate human-error liabilities, and aggressively build frameworks positionally built for dominance.
+                    <br><br>
+                    What truly sets Pathway Devs apart is our investigative execution. Every single vulnerability, workflow, data silo, and growth structural pattern within your business is forensically evaluated by our custom, specialized pattern-recognition engine: the mind of our owner. This high-octane personal diagnostic approach guarantees that your technical systems are built with lethal combat efficiency. We blend robust, ironclad privacy protocols and continuous compliance management into everything we deploy, safely insulating your business intelligence assets from external threats.
+                </p>
+            </div>
+        </section>
+    </div>
+
+    <div id="page-offerings" class="page-content">
+        <section class="section">
+            <h2 class="section-title">What <span>We Offer</span></h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>Systems Architecture</h3>
+                    <p>Tailored high-performance infrastructural engineering built specifically for mid-sized business landscapes to scale operations flawlessly.</p>
+                </div>
+                <div class="card">
+                    <h3>Zero-Touch AI Automation</h3>
+                    <p>Complete custom AI automation infrastructure engineered so you never have to touch a computer screen. Everything operates right from your smartphone.</p>
+                </div>
+                <div class="card">
+                    <h3>Turnkey Enterprise CRMs</h3>
+                    <p>Fully integrated CRM architectures that aggressively track, log, and manage every single operational aspect of your business automatically.</p>
+                </div>
+                <div class="card">
+                    <h3>Custom Office SOPs & Templates</h3>
+                    <p>Fully compliant bespoke business document architectures: invoices, hiring applications, customized corporate cards, and promotional brochures.</p>
+                </div>
+                <div class="card">
+                    <h3>Productized Apps</h3>
+                    <p>In-house tools we actually run and ship. AutoBridge is live. Round Table ships as A and B together for a live split. Ads, not subscriptions. See the Apps bench.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" style="background-color: #0d071a;">
+            <h2 class="section-title">Why <span>You Need Us</span></h2>
+            <div class="grid">
+                <div class="card" style="border-left: 3px solid var(--neon-green);">
+                    <h3>No Tech Experience Needed</h3>
+                    <p>We build our automated frameworks to conform entirely to your comfort level. If you can use a basic mobile app on your smartphone, you can manage our infrastructure perfectly.</p>
+                </div>
+                <div class="card" style="border-left: 3px solid var(--maroon);">
+                    <h3>Privacy & Compliance Minded</h3>
+                    <p>Every line of code we deploy and every operational structure we organize is built under rigid security protocol parameters to protect critical company assets.</p>
+                </div>
+                <div class="card" style="border-left: 3px solid var(--bronze);">
+                    <h3>Physical System Integration</h3>
+                    <p>We go beyond software systems. We configure advanced facility hardware security monitoring setups that integrate straight into your software tracking systems.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div id="page-apps" class="page-content">
+        <section class="section">
+            <h2 class="section-title">The <span>Bench</span></h2>
+            <div class="text-container" style="margin-bottom: 50px;">
+                <p>
+                    What is live is live. What is in development is named. No subscription wall on the consumer apps — advertising carries them.
+                </p>
+            </div>
+
+            <h2 class="section-title" style="font-size: 1.6rem; margin-bottom: 24px;">Deployed</h2>
+            <div class="grid" style="margin-bottom: 60px;">
+                <div class="card app-card">
+                    <div class="app-meta">
+                        <span class="badge badge-live">Live</span>
+                    </div>
+                    <h3>AutoBridge</h3>
+                    <p>Live on the web. Free to use — no subscription. Income is advertising, not a gate. Play Store package is staged; ads first so the listing isn’t an empty room.</p>
+                    <p class="est-date">Live · pathwaydevs.online · Play Store folders ready</p>
+                </div>
+                <div class="card app-card">
+                    <div class="app-meta">
+                        <span class="badge badge-live">Live</span>
+                    </div>
+                    <h3>Pathway Devs Site</h3>
+                    <p>Public face of the firm. Systems architecture, intake, Marilyn routing, and the four-word standard.</p>
+                    <p class="est-date">Live · pathway-devs.netlify.app</p>
+                </div>
+            </div>
+
+            <h2 class="section-title" style="font-size: 1.6rem; margin-bottom: 24px;">In Development</h2>
+            <div class="grid">
+                <div class="card app-card">
+                    <div class="app-meta">
+                        <span class="badge badge-dev">In Dev</span>
+                    </div>
+                    <h3>Round Table A</h3>
+                    <p>First cut. Free, ads not subscriptions. Ships in the same window as B so we can run a live A/B — same job, two builds, keep the one people actually use.</p>
+                    <p class="est-date">Paired release with B · web first · Play after ads</p>
+                </div>
+                <div class="card app-card">
+                    <div class="app-meta">
+                        <span class="badge badge-dev">In Dev</span>
+                    </div>
+                    <h3>Round Table B</h3>
+                    <p>Second cut. Released with A on purpose. Traffic split in the open, not a quiet pick in the garage. Ads model matches AutoBridge.</p>
+                    <p class="est-date">Paired release with A · web first · Play after ads</p>
+                </div>
+                <div class="card app-card">
+                    <div class="app-meta">
+                        <span class="badge badge-dev">In Dev</span>
+                    </div>
+                    <h3>Pathway Policy</h3>
+                    <p>Compliance policies generated and hosted. Low overhead — ship it, it pays or it doesn’t, and if it pays it keeps paying.</p>
+                    <p class="est-date">Est. deploy · end of October 2026</p>
+                </div>
+                <div class="card app-card">
+                    <div class="app-meta">
+                        <span class="badge badge-dev">In Dev</span>
+                    </div>
+                    <h3>FIGHT</h3>
+                    <p>Fluid-gender assistant with a real companion mode. Built for people who already use work AIs as partners and get a brick wall. Assistant stays intact. Presentation is yours — woman, man, or trans. Knowledge base is already loaded. Not the widget on this site.</p>
+                    <p class="est-date">Est. deploy · end of December 2026 · conservative</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div id="page-about" class="page-content">
+        <section class="section">
+            <h2 class="section-title">The <span>Architecture of Recognition</span></h2>
+            <div class="text-container">
+                <p>
+                    Every tech firm boasts about their servers, their software models, and their algorithmic computation speeds. At Pathway Devs, our primary operational engine doesn’t live in a cloud server rack—it operates between the ears of our founder.
+                    <br><br>
+                    Driven by a rare, high-octane pattern-recognition capability, the owner of Pathway Devs approaches corporate problem-solving less like a traditional programmer and more like a forensic systems architect. Where others see chaotic business data, fragmented workflows, and messy communication silos, he sees an underlying blueprint waiting to be optimized. This venture wasn't built to hand out generic software templates; it was forged to deliver absolute operational dominance for mid-sized enterprises. By blending an aggressive, forward-thinking technical instinct with raw business pragmatism, he ensures that Pathway Devs delivers elite corporate results without losing the fierce, personalized accountability of a dedicated technical partner. When you work with us, you are deploying a custom-engineered solution built under his direct oversight.
+                </p>
+            </div>
+        </section>
+    </div>
+
+    <div id="page-contact" class="page-content">
+        <section class="section">
+            <h2 class="section-title">Communications <span>Control Room</span></h2>
+
+            <div class="control-room">
+
+                <a href="https://www.google.com/calendar/hosted/pathwaysunite.com" class="action-button primary-glow" target="_blank">🗓️ Schedule a 15-Minute Zoom with the Owner</a>
+                <p class="est-date" style="text-align:center;">If that calendar is down, use the form or the phone. Workspace recovery in progress.</p>
+                <a href="#intake-matrix" class="action-button primary-glow">📝 Access Digital Intake Diagnostics Form</a>
+
+                <div class="source-tracker">
+                    <label for="discovery-source">Where did you hear about Pathway Devs?</label>
+                    <select id="discovery-source">
+                        <option value="unspecified">Select Option...</option>
+                        <option value="search">Search Engine (Google/Bing)</option>
+                        <option value="social">Social Media Network</option>
+                        <option value="referral">Professional Referral</option>
+                        <option value="direct">Direct Outreach / Advertisement</option>
+                    </select>
+                </div>
+
+                <a href="tel:2484456951" class="action-button">📞 Talk to our Receptionist 24/7 (Francesca)</a>
+                <a href="sms:2487800311" class="action-button">💬 Text the Gatekeeper (Francesca)</a>
+                <a href="tel:2484456951" class="action-button">📱 Direct Line to the Owner (Routed via Francesca)</a>
+
+                <div class="gatekeeper-footer">Francesca the Gatekeeper · line stays hot 24/7/365</div>
+            </div>
+
+            <div id="intake-matrix" class="form-page-container">
+                <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfklYo2-PB6fWq4uiZsagjZxXLKv2xIdQiZKre-d7qEKbdMwQ/viewform?embedded=true" width="100%" height="1500" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Pathway Devs. All Rights Reserved.</p>
+        <iframe src="https://pathwaydevs.online/p/priv-h5wwl587p6" width="100%" height="600" style="border:0;margin-top:16px;background:#fff" title="Pathway Devs Privacy Policy" loading="lazy"></iframe>
+    </footer>
+
+    <elevenlabs-convai agent-id="agent_3801m0sbaw42een8cnyezcsc21hq"></elevenlabs-convai>
+    <script src="https://unpkg.com/@elevenlabs/convai-widget-embed" async type="text/javascript"></script>
+    <script>
+        function showPage(pageId) {
+            const pages = document.querySelectorAll('.page-content');
+            pages.forEach(page => page.classList.remove('active-page'));
+
+            const navLinks = document.querySelectorAll('nav a');
+            navLinks.forEach(link => link.classList.remove('active'));
+
+            document.getElementById('page-' + pageId).classList.add('active-page');
+            document.getElementById('nav-' + pageId).classList.add('active');
+
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        }
+    </script>
+</body>
+</html>
