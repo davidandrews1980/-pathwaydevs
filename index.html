@@ -273,7 +273,7 @@
             flex: 1;
         }
 
-        .francesca-widget {
+        .voice-widget {
             background: rgba(0, 0, 0, 0.45);
             border: 1px solid var(--neon-green);
             border-radius: 8px;
@@ -281,20 +281,20 @@
             text-align: center;
         }
 
-        .francesca-widget h3 {
+        .voice-widget h3 {
             color: var(--neon-green);
             text-transform: uppercase;
             letter-spacing: 2px;
             margin-bottom: 8px;
         }
 
-        .francesca-widget p {
+        .voice-widget p {
             color: #b3b3b3;
             font-size: 0.95rem;
             margin-bottom: 16px;
         }
 
-        .francesca-slot {
+        .voice-slot {
             min-height: 90px;
             display: flex;
             align-items: center;
@@ -555,15 +555,15 @@
                     </div>
                     <h3>AutoBridge</h3>
                     <p>Live on the web. Free to use — no subscription. Income is advertising, not a gate. Play Store package is staged; ads first so the listing isn’t an empty room.</p>
-                    <p class="est-date">Live · pathwaydevs.online · Play Store folders ready</p>
+                    <p class="est-date">Live · AutoBridge · Play Store folders ready</p>
                 </div>
                 <div class="card app-card">
                     <div class="app-meta">
                         <span class="badge badge-live">Live</span>
                     </div>
                     <h3>Pathway Devs Site</h3>
-                    <p>Public face of the firm. Systems architecture, intake, Marilyn routing, and the four-word standard.</p>
-                    <p class="est-date">Live · pathway-devs.netlify.app</p>
+                    <p>Public face of the firm. Systems architecture, intake and the four-word standard.</p>
+                    <p class="est-date">Live · pathwaydevs.tech</p>
                 </div>
             </div>
 
@@ -639,11 +639,10 @@
                     </select>
                 </div>
 
-                <a href="tel:2484456951" class="action-button">📞 Talk to our Receptionist 24/7 (Francesca)</a>
-                <a href="sms:2487800311" class="action-button">💬 Text the Gatekeeper (Francesca)</a>
-                <a href="tel:2484456951" class="action-button">📱 Direct Line to the Owner (Routed via Francesca)</a>
+                <a href="tel:2484456951" class="action-button">📞 Call Pathway Devs · 248-445-6951</a>
+                <a href="sms:2489792893" class="action-button">💬 Text Pathway Devs · 248-979-2893</a>
 
-                <div class="gatekeeper-footer">Francesca the Gatekeeper · line stays hot 24/7/365</div>
+                
             </div>
 
             <div id="intake-matrix" class="form-page-container">
@@ -654,23 +653,23 @@
 
     <footer>
         <p>&copy; 2026 Pathway Devs. All Rights Reserved.</p>
-        <iframe src="https://pathwaydevs.online/p/priv-h5wwl587p6" width="100%" height="600" style="border:0;margin-top:16px;background:#fff" title="Pathway Devs Privacy Policy" loading="lazy"></iframe>
+        <p style="margin-top:16px;font-size:0.9rem;opacity:0.85">Privacy stays on this domain. No third-party policy frame.</p>
     </footer>
 
-        <elevenlabs-convai agent-id="agent_4801m1zkbdrkfh1rbtq5tjer7n0w"></elevenlabs-convai><script 
-         src="https://unpkg.com/@elevenlabs/convai-widget-embed" async type="text/javascript"></script>
+        <elevenlabs-convai agent-id="agent_4801m1zkbdrkfh1rbtq5tjer7n0w"></elevenlabs-convai>
+        <script src="https://unpkg.com/@elevenlabs/convai-widget-embed" async type="text/javascript"></script>
+        <script>
         function showPage(pageId) {
             const pages = document.querySelectorAll('.page-content');
             pages.forEach(page => page.classList.remove('active-page'));
-
             const navLinks = document.querySelectorAll('nav a');
             navLinks.forEach(link => link.classList.remove('active'));
-
-            document.getElementById('page-' + pageId).classList.add('active-page');
-            document.getElementById('nav-' + pageId).classList.add('active');
-
+            const page = document.getElementById('page-' + pageId);
+            const nav = document.getElementById('nav-' + pageId);
+            if (page) page.classList.add('active-page');
+            if (nav) nav.classList.add('active');
             window.scrollTo({top: 0, behavior: 'smooth'});
         }
-    </script>
+        </script>
 </body>
 </html>
