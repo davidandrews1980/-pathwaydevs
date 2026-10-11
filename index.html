@@ -3,645 +3,197 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Pathway Devs delivers elite systems architecture, custom AI automation, customized SOP templates, and high-end CRM integrations for midsized businesses. Privacy and compliance minded.">
-    <meta name="keywords" content="Systems Architecture, AI Automation, Business SOPs, CRM Integration, Custom Templates, Privacy Compliance, Tech Consulting">
-    <title>Pathway Devs | Elite Systems Architecture & AI Automation</title>
-    <style>
-        :root {
-            --bg-dark: #09050e;
-            --bg-card: #140d1f;
-            --maroon: #4a0e17;
-            --purple-deep: #25123e;
-            --neon-green: #39ff14;
-            --light-grey: #d1d1d6;
-            --bronze: #d4af37;
-            --bronze-dark: #8c6d23;
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        body {
-            background-color: var(--bg-dark);
-            color: var(--light-grey);
-            line-height: 1.6;
-            overflow-x: hidden;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .motto-bar {
-            background: linear-gradient(90deg, var(--maroon), var(--purple-deep));
-            color: var(--bronze);
-            text-align: center;
-            padding: 8px 10px;
-            font-size: 0.85rem;
-            letter-spacing: 4px;
-            font-weight: bold;
-            text-transform: uppercase;
-            border-bottom: 1px solid var(--bronze-dark);
-        }
-
-        header {
-            background-color: rgba(9, 5, 14, 0.95);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            border-bottom: 1px solid rgba(57, 255, 20, 0.2);
-            padding: 15px 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo-container {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .logo-img {
-            width: 64px;
-            height: auto;
-            border-radius: 6px;
-            border: 1px solid var(--bronze);
-            object-fit: contain;
-            background: rgba(0,0,0,0.35);
-        }
-
-        .brand-name {
-            color: #ffffff;
-            font-size: 1.5rem;
-            font-weight: 800;
-            letter-spacing: 1px;
-        }
-
-        .brand-name span {
-            color: var(--neon-green);
-        }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 25px;
-        }
-
-        nav a {
-            color: var(--light-grey);
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.95rem;
-            transition: color 0.3s;
-            text-transform: uppercase;
-            cursor: pointer;
-        }
-
-        nav a.active, nav a:hover {
-            color: var(--neon-green);
-        }
-
-        .page-content {
-            display: none;
-            flex: 1;
-        }
-
-        .page-content.active-page {
-            display: block;
-        }
-
-        .hero {
-            padding: 140px 5% 110px 5%;
-            text-align: center;
-            background-color: var(--bg-dark);
-            background-image:
-                linear-gradient(180deg, rgba(9, 5, 14, 0.55) 0%, rgba(9, 5, 14, 0.72) 55%, rgba(9, 5, 14, 0.92) 100%),
-                url('crest-wide.jpg');
-            background-size: cover;
-            background-position: center 40%;
-            background-repeat: no-repeat;
-        }
-
-        .promo-badge {
-            background-color: var(--maroon);
-            color: var(--neon-green);
-            padding: 8px 16px;
-            border-radius: 50px;
-            font-size: 0.9rem;
-            font-weight: bold;
-            display: inline-block;
-            margin-bottom: 25px;
-            border: 1px solid var(--neon-green);
-            text-transform: uppercase;
-        }
-
-        .hero h1 {
-            font-size: 3.5rem;
-            color: #fff;
-            margin-bottom: 20px;
-            line-height: 1.2;
-        }
-
-        .hero h1 span {
-            color: transparent;
-            background: linear-gradient(45deg, var(--bronze), var(--neon-green));
-            -webkit-background-clip: text;
-            background-clip: text;
-        }
-
-        .hero p {
-            max-width: 800px;
-            margin: 0 auto 40px auto;
-            font-size: 1.2rem;
-            color: #b3b3b3;
-        }
-
-        .cta-btn {
-            background-color: transparent;
-            color: var(--neon-green);
-            border: 2px solid var(--neon-green);
-            padding: 14px 32px;
-            font-size: 1.1rem;
-            font-weight: bold;
-            text-transform: uppercase;
-            cursor: pointer;
-            border-radius: 4px;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            display: inline-block;
-        }
-
-        .cta-btn:hover {
-            background-color: var(--neon-green);
-            color: var(--bg-dark);
-            box-shadow: 0 0 15px var(--neon-green);
-        }
-
-        .section {
-            padding: 60px 5% 80px 5%;
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 40px;
-            color: #fff;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .section-title span {
-            color: var(--bronze);
-        }
-
-        .text-container {
-            max-width: 900px;
-            margin: 0 auto;
-            background: var(--bg-card);
-            border-left: 4px solid var(--maroon);
-            padding: 40px;
-            border-radius: 4px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .card {
-            background-color: var(--bg-card);
-            border: 1px solid rgba(255,255,255,0.05);
-            padding: 30px;
-            border-radius: 6px;
-        }
-
-        .card h3 {
-            color: var(--bronze);
-            font-size: 1.3rem;
-            margin-bottom: 15px;
-            text-transform: uppercase;
-        }
-
-        .app-card {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-            min-height: 220px;
-        }
-
-        .app-card .app-meta {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            align-items: center;
-        }
-
-        .badge {
-            display: inline-block;
-            padding: 4px 10px;
-            border-radius: 50px;
-            font-size: 0.7rem;
-            font-weight: 800;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-        }
-
-        .badge-live {
-            color: var(--bg-dark);
-            background: var(--neon-green);
-        }
-
-        .badge-dev {
-            color: var(--bronze);
-            background: rgba(212, 175, 55, 0.12);
-            border: 1px solid var(--bronze-dark);
-        }
-
-        .est-date {
-            font-size: 0.8rem;
-            color: #9a9aa3;
-            letter-spacing: 0.5px;
-        }
-
-        .app-card p {
-            flex: 1;
-        }
-
-        .voice-widget {
-            background: rgba(0, 0, 0, 0.45);
-            border: 1px solid var(--neon-green);
-            border-radius: 8px;
-            padding: 22px 20px;
-            text-align: center;
-        }
-
-        .voice-widget h3 {
-            color: var(--neon-green);
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 8px;
-        }
-
-        .voice-widget p {
-            color: #b3b3b3;
-            font-size: 0.95rem;
-            margin-bottom: 16px;
-        }
-
-        .voice-slot {
-            min-height: 90px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border: 1px dashed rgba(57, 255, 20, 0.35);
-            border-radius: 6px;
-            color: var(--bronze);
-            font-size: 0.8rem;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-        }
-
-        .control-room {
-            max-width: 700px;
-            margin: 0 auto;
-            background: linear-gradient(135deg, var(--bg-card) 0%, var(--purple-deep) 100%);
-            padding: 40px 30px;
-            border-radius: 8px;
-            border: 1px solid var(--bronze-dark);
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-
-        .action-button {
-            display: block;
-            width: 100%;
-            padding: 18px;
-            background: rgba(0, 0, 0, 0.4);
-            border: 1px solid rgba(214, 175, 55, 0.3);
-            border-radius: 4px;
-            color: #fff;
-            font-size: 1.1rem;
-            font-weight: bold;
-            text-decoration: none;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: all 0.3s;
-            text-align: center;
-        }
-
-        .action-button:hover {
-            border-color: var(--neon-green);
-            background: rgba(57, 255, 20, 0.05);
-            color: var(--neon-green);
-            box-shadow: 0 0 10px rgba(57, 255, 20, 0.1);
-        }
-
-        .action-button.primary-glow {
-            border-color: var(--neon-green);
-            background: rgba(57, 255, 20, 0.08);
-            color: var(--neon-green);
-        }
-
-        .action-button.primary-glow:hover {
-            background: var(--neon-green);
-            color: var(--bg-dark);
-            box-shadow: 0 0 15px var(--neon-green);
-        }
-
-        .source-tracker {
-            margin-top: 15px;
-            background: rgba(0,0,0,0.3);
-            padding: 20px;
-            border-radius: 4px;
-            border: 1px solid rgba(255,255,255,0.05);
-        }
-
-        .source-tracker label {
-            display: block;
-            margin-bottom: 10px;
-            font-weight: bold;
-            text-transform: uppercase;
-            color: var(--bronze);
-            font-size: 0.9rem;
-            letter-spacing: 1px;
-        }
-
-        .source-tracker select {
-            width: 100%;
-            padding: 12px;
-            background: var(--bg-dark);
-            border: 1px solid var(--maroon);
-            color: #fff;
-            border-radius: 4px;
-            font-size: 1rem;
-            outline: none;
-        }
-
-        .source-tracker select:focus {
-            border-color: var(--neon-green);
-        }
-
-        .gatekeeper-footer {
-            color: var(--bronze);
-            font-weight: bold;
-            text-transform: uppercase;
-            font-size: 0.95rem;
-            letter-spacing: 1px;
-            margin-top: 10px;
-            text-align: center;
-        }
-
-        .form-page-container {
-            max-width: 850px;
-            margin: 30px auto 0 auto;
-            background: rgba(0, 0, 0, 0.4);
-            padding: 15px;
-            border-radius: 6px;
-            border: 1px solid rgba(57, 255, 20, 0.15);
-        }
-
-        footer {
-            background-color: #050308;
-            text-align: center;
-            padding: 30px;
-            font-size: 0.85rem;
-            color: #666;
-            border-top: 1px solid rgba(255,255,255,0.05);
-        }
-
-        footer a {
-            color: var(--bronze);
-            text-decoration: none;
-        }
-
-        footer a:hover {
-            color: var(--neon-green);
-        }
-
-        .policy-frame-wrap {
-            width: 100%;
-            max-width: 920px;
-            margin: 0 auto;
-            background: #fff;
-            border-radius: 8px;
-            overflow: hidden;
-            border: 1px solid rgba(212, 175, 55, 0.35);
-        }
-
-        .policy-frame-wrap iframe {
-            display: block;
-            width: 100%;
-            min-height: 720px;
-            border: 0;
-            background: #fff;
-        }
-
-        @media (max-width: 768px) {
-            header { flex-direction: column; gap: 15px; }
-            nav ul { flex-wrap: wrap; justify-content: center; gap: 15px; }
-            .hero h1 { font-size: 2.2rem; }
-        }
-    </style>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-H7XBWN26QY"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-H7XBWN26QY');
-    </script>
+    <title>Pathway Devs | Systems Architecture, AI Automation &amp; Working Apps</title>
+    <meta name="description" content="Systems architecture, custom AI automation, SOP templates and CRM integration for mid-sized businesses, plus live apps we built and run ourselves.">
+    <link rel="canonical" href="https://pathwaydevs.tech/">
+    <meta name="theme-color" content="#09050e">
+    <meta property="og:site_name" content="Pathway Devs">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Pathway Devs | Systems Architecture, AI Automation &amp; Working Apps">
+    <meta property="og:description" content="Systems architecture, custom AI automation, SOP templates and CRM integration for mid-sized businesses, plus live apps we built and run ourselves.">
+    <meta property="og:url" content="https://pathwaydevs.tech/">
+    <meta property="og:image" content="https://pathwaydevs.tech/assets/og/default.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Pathway Devs | Systems Architecture, AI Automation &amp; Working Apps">
+    <meta name="twitter:description" content="Systems architecture, custom AI automation, SOP templates and CRM integration for mid-sized businesses, plus live apps we built and run ourselves.">
+    <meta name="twitter:image" content="https://pathwaydevs.tech/assets/og/default.jpg">
+    <link rel="icon" type="image/png" sizes="64x64" href="/assets/favicon-64.png">
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+    <link rel="stylesheet" href="/assets/css/site.css?v=20261011">
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Pathway Devs","legalName":"John Gault & Sons","url":"https://pathwaydevs.tech/","logo":"https://pathwaydevs.tech/assets/apple-touch-icon.png","telephone":"+1-231-320-1550"}</script>
 </head>
 <body>
 
+    <a class="skip-link" href="#main">Skip to content</a>
     <div class="motto-bar">
         SCIRMEN &bull; ENECH &bull; TRIUWA &bull; AITHGHEN
     </div>
 
     <header>
-        <div class="logo-container">
-            <img src="1063.jpg" alt="John Gault · Pathway Devs · Inti Sine Sune crest" class="logo-img">
-            <div class="brand-name">Pathway <span>Devs</span></div>
-        </div>
-        <nav>
+        <a class="logo-container" href="/" aria-label="Pathway Devs home">
+            <img src="/assets/logo-128.webp" width="64" height="76" alt="John Gault · Pathway Devs · Inti Sine Sune crest" class="logo-img">
+            <span class="brand-name">Pathway <span>Devs</span></span>
+        </a>
+        <nav aria-label="Main">
             <ul>
-                <li><a onclick="showPage('landing')" id="nav-landing" class="active">Home</a></li>
-                <li><a onclick="showPage('offerings')" id="nav-offerings">What We Offer & Why</a></li>
-                <li><a onclick="showPage('apps')" id="nav-apps">Apps</a></li>
-                <li><a onclick="showPage('about')" id="nav-about">About Us</a></li>
-                <li><a onclick="showPage('contact')" id="nav-contact">Contact Room</a></li>
+                <li><a href="/" id="nav-landing" data-tab="landing" class="active" aria-current="page">Home</a></li>
+                <li><a href="/#offerings" id="nav-offerings" data-tab="offerings" class="">What We Offer &amp; Why</a></li>
+                <li><a href="/apps/" id="nav-apps" class="">Apps</a></li>
+                <li><a href="/#about" id="nav-about" data-tab="about" class="">About Us</a></li>
+                <li><a href="/#contact" id="nav-contact" data-tab="contact" class="">Contact Room</a></li>
             </ul>
         </nav>
     </header>
 
+    <main id="main">
+
     <div id="page-landing" class="page-content active-page">
         <section class="hero">
-            <div class="promo-badge">Next 2 Accounts Signed Up Are 50% Off</div>
+            <a class="promo-badge" href="/apps/">Working apps you can open today &rarr;</a>
             <h1>Personalized Treatment.<br><span>Big Corporate Results.</span></h1>
             <p>We investigate every possible business angle with our specialized pattern recognition hardware: the owner. Radical technical optimization designed to dominate your industry market landscape.</p>
-            <button onclick="showPage('contact')" class="cta-btn">Initialize Connection Profile</button>
+            <a href="/#contact" class="cta-btn">Open the Contact Room</a>
         </section>
 
         <section class="section">
             <h2 class="section-title">Operational <span>Overview</span></h2>
             <div class="text-container">
                 <p>
-                    Pathway Devs is an elite technical consulting powerhouse built entirely around a singular operational philosophy: delivering massive, uncompromising corporate results through hyper-personalized, tactical execution. We specialize in high-end systems architecture consulting tailored specifically for mid-sized businesses hungry for institutional-grade scaling. We do not offer cookie-cutter solutions or high-level academic theory. Instead, we deep-dive directly into the unique architecture of your enterprise workflows to uncover operational leaks, eliminate human-error liabilities, and aggressively build frameworks positionally built for dominance.
+                    Pathway Devs is a technical consulting shop built around one philosophy: hands-on, hyper-personalized execution. We specialize in systems architecture for mid-sized businesses. We do not offer cookie-cutter solutions or academic theory. We dig into how your workflows actually run, to find where work leaks, where people re-key the same data, and where errors creep in.
                     <br><br>
-                    What truly sets Pathway Devs apart is our investigative execution. Every single vulnerability, workflow, data silo, and growth structural pattern within your business is forensically evaluated by our custom, specialized pattern-recognition engine: the mind of our owner. This high-octane personal diagnostic approach guarantees that your technical systems are built with lethal combat efficiency. We blend robust, ironclad privacy protocols and continuous compliance management into everything we deploy, safely insulating your business intelligence assets from external threats.
+                    What sets us apart is investigative execution. The workflows, data silos and growth patterns inside your business are read closely by our custom pattern-recognition engine: the mind of our owner. We design with privacy and compliance in mind, and we say plainly that we are not a law firm.
                 </p>
             </div>
+        </section>
+
+        <section class="section section-alt" aria-labelledby="fit-title">
+            <p class="eyebrow">Fit, stated plainly</p>
+            <h2 class="section-title" id="fit-title">What we <span>will not do</span></h2>
+            <div class="text-container text-container-narrow" style="margin-bottom: 30px;">
+                <p>The work we turn down describes the work we take better than any list of services does.</p>
+            </div>
+            <div class="grid">
+                <div class="card">
+                    <h3>Work above our depth</h3>
+                    <p>If a system sits past what we can build well, we will say so rather than take it. Taking it would cost you more than the refusal does.</p>
+                </div>
+                <div class="card">
+                    <h3>Work we cannot honestly carry</h3>
+                    <p>We will not take on an engagement we cannot finish well. Overcommitting is how a build lands late or lands badly, and either one lands on you.</p>
+                </div>
+                <div class="card">
+                    <h3>Work with unresolved legal exposure</h3>
+                    <p>If the details do not survive daylight, we are not the firm for it.</p>
+                </div>
+                <div class="card">
+                    <h3>Invented proof</h3>
+                    <p>We have no customer testimonials yet, so we do not show any. No made-up quotes, client names or numbers. The proof on this site is working software you can open yourself.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" aria-labelledby="proof-title">
+            <p class="eyebrow">Shipped and running</p>
+            <h2 class="section-title" id="proof-title">Apps we <span>build and run</span></h2>
+            <div class="text-container text-container-narrow" style="margin-bottom: 30px;">
+                <p>These are our own products, live on the web. Each one has its own page with a real screenshot, its honest status and a link to the app.</p>
+            </div>
+            <div class="grid">
+                <article class="card app-card">
+                    <a class="card-link" href="/apps/policypilot/">
+                        <div class="app-meta"><span class="badge badge-live">Live</span></div>
+                        <h3>PolicyPilot</h3>
+                        <p>Policy drafting on the web: questionnaire in, hosted policy documents out.</p>
+                        <span class="more">See the page &rarr;</span>
+                    </a>
+                </article>
+                <article class="card app-card">
+                    <a class="card-link" href="/apps/autobridge/">
+                        <div class="app-meta"><span class="badge badge-live">Live</span></div>
+                        <h3>AutoBridge</h3>
+                        <p>Free AI browser command center. MCP tools and user scripts. Ads, not subscriptions.</p>
+                        <span class="more">See the page &rarr;</span>
+                    </a>
+                </article>
+                <article class="card app-card">
+                    <a class="card-link" href="/apps/formation/">
+                        <div class="app-meta"><span class="badge badge-live">Live</span></div>
+                        <h3>Pathway Formation</h3>
+                        <p>LLC formation desk. A wizard prepares your articles and the 50-state fee table is public.</p>
+                        <span class="more">See the page &rarr;</span>
+                    </a>
+                </article>
+                <article class="card app-card">
+                    <a class="card-link" href="/apps/round-table/">
+                        <div class="app-meta"><span class="badge badge-live">Live · New</span></div>
+                        <h3>Round Table</h3>
+                        <p>A table of AI seats you set up one by one, with a shared idea board.</p>
+                        <span class="more">See the page &rarr;</span>
+                    </a>
+                </article>
+                <article class="card app-card">
+                    <a class="card-link" href="/apps/ai-reality/">
+                        <div class="app-meta"><span class="badge badge-live">Live</span></div>
+                        <h3>AI Reality</h3>
+                        <p>A multi-AI chat room. Several linked AIs, an idea board, your own API key.</p>
+                        <span class="more">See the page &rarr;</span>
+                    </a>
+                </article>
+                <article class="card app-card">
+                    <a class="card-link" href="/apps/almost-uncensored-tv/">
+                        <div class="app-meta"><span class="badge badge-live">Live</span></div>
+                        <h3>Almost Uncensored TV</h3>
+                        <p>A video platform with broad creative freedom, and two hard exclusions.</p>
+                        <span class="more">See the page &rarr;</span>
+                    </a>
+                </article>
+            </div>
+            <p class="center-cta"><a class="cta-btn" href="/apps/">See all apps</a></p>
         </section>
     </div>
 
     <div id="page-offerings" class="page-content">
         <section class="section">
             <h2 class="section-title">What <span>We Offer</span></h2>
+            <div class="text-container text-container-narrow" style="margin-bottom: 30px;">
+                <p>Every engagement starts the same way: a close read of how the business actually runs. These are the areas where that read usually lands.</p>
+            </div>
             <div class="grid">
                 <div class="card">
                     <h3>Systems Architecture</h3>
-                    <p>Tailored high-performance infrastructural engineering built specifically for mid-sized business landscapes to scale operations flawlessly.</p>
+                    <p>We map how work actually moves through the business, then rebuild the structure around it. Siloed data, duplicated entry and manual handoffs get removed at the architecture level rather than patched over.</p>
                 </div>
                 <div class="card">
-                    <h3>Zero-Touch AI Automation</h3>
-                    <p>Complete custom AI automation infrastructure engineered so you never have to touch a computer screen. Everything operates right from your smartphone.</p>
+                    <h3>Custom AI Automation</h3>
+                    <p>Automation built for your workflows, not a product demo. We start from the tasks your team repeats and the decisions that stall, then put the model where it removes the bottleneck.</p>
                 </div>
                 <div class="card">
-                    <h3>Turnkey Enterprise CRMs</h3>
-                    <p>Fully integrated CRM architectures that aggressively track, log, and manage every single operational aspect of your business automatically.</p>
+                    <h3>SOP Templates</h3>
+                    <p>Written procedures your team will actually follow, built from the way the work already gets done. Every process gets an owner, a trigger and a definition of done.</p>
                 </div>
                 <div class="card">
-                    <h3>Custom Office SOPs & Templates</h3>
-                    <p>Fully compliant bespoke business document architectures: invoices, hiring applications, customized corporate cards, and promotional brochures.</p>
+                    <h3>CRM Integration</h3>
+                    <p>Pipeline, quoting, invoicing and follow-up in one place that reflects reality. We connect the systems you already pay for instead of selling you a replacement.</p>
                 </div>
                 <div class="card">
                     <h3>Productized Apps</h3>
-                    <p>In-house tools we actually run and ship. Live now: PolicyPilot, AutoBridge, Almost Uncensored TV and Pathway Formation. Round Table and AI Reality are coming next. See the Apps bench.</p>
+                    <p>In-house tools we actually run. Live now: PolicyPilot, AutoBridge, Pathway Formation, Round Table, AI Reality and Almost Uncensored TV. <a href="/apps/" class="inline-link">See the apps</a>.</p>
                 </div>
             </div>
         </section>
 
         <section class="section" style="background-color: #0d071a;">
-            <h2 class="section-title">Why <span>You Need Us</span></h2>
+            <h2 class="section-title">How <span>We Work</span></h2>
             <div class="grid">
                 <div class="card" style="border-left: 3px solid var(--neon-green);">
                     <h3>No Tech Experience Needed</h3>
-                    <p>We build our automated frameworks to conform entirely to your comfort level. If you can use a basic mobile app on your smartphone, you can manage our infrastructure perfectly.</p>
+                    <p>We build automated frameworks to fit your comfort level. If you can use a basic mobile app on your smartphone, you should be able to run what we set up.</p>
                 </div>
                 <div class="card" style="border-left: 3px solid var(--maroon);">
-                    <h3>Privacy & Compliance Minded</h3>
-                    <p>Every line of code we deploy and every operational structure we organize is built under rigid security protocol parameters to protect critical company assets.</p>
-                </div>
-                <div class="card" style="border-left: 3px solid var(--bronze);">
-                    <h3>Physical System Integration</h3>
-                    <p>We go beyond software systems. We configure advanced facility hardware security monitoring setups that integrate straight into your software tracking systems.</p>
-                </div>
-            </div>
-        </section>
-    </div>
-
-    <div id="page-apps" class="page-content">
-        <section class="section">
-            <h2 class="section-title">The <span>Bench</span></h2>
-            <div class="text-container" style="margin-bottom: 50px;">
-                <p>
-                    What is live is live. What is in development is named. No subscription wall on the consumer apps — advertising carries them.
-                </p>
-            </div>
-
-            <h2 class="section-title" style="font-size: 1.6rem; margin-bottom: 24px;">Deployed</h2>
-            <div class="grid" style="margin-bottom: 60px;">
-                <div class="card app-card">
-                    <div class="app-meta">
-                        <span class="badge badge-live">Live</span>
-                    </div>
-                    <h3>PolicyPilot</h3>
-                    <p>Policy drafting on the web. Not legal advice; not reviewed by a licensed attorney.</p>
-                    <p class="est-date">Live · <a href="https://pathwaydevs.online" target="_blank" rel="noopener noreferrer" style="color: var(--neon-green);">pathwaydevs.online</a></p>
-                </div>
-                <div class="card app-card">
-                    <div class="app-meta">
-                        <span class="badge badge-live">Live</span>
-                    </div>
-                    <h3>AutoBridge</h3>
-                    <p>Live on the web. Free to use — no subscription. Income is advertising, not a gate.</p>
-                    <p class="est-date">Live · <a href="https://pathwaydevs.store" target="_blank" rel="noopener noreferrer" style="color: var(--neon-green);">pathwaydevs.store</a></p>
-                </div>
-                <div class="card app-card">
-                    <div class="app-meta">
-                        <span class="badge badge-live">Live</span>
-                    </div>
-                    <h3>Almost Uncensored TV</h3>
-                    <p>Live on the web.</p>
-                    <p class="est-date">Live · <a href="https://video.pathwaydevs.org" target="_blank" rel="noopener noreferrer" style="color: var(--neon-green);">video.pathwaydevs.org</a></p>
-                </div>
-                <div class="card app-card">
-                    <div class="app-meta">
-                        <span class="badge badge-live">Live</span>
-                    </div>
-                    <h3>Pathway Formation</h3>
-                    <p>LLC formation desk. Not a licensed attorney.</p>
-                    <p class="est-date">Live · <a href="https://pathwaydevs.software" target="_blank" rel="noopener noreferrer" style="color: var(--neon-green);">pathwaydevs.software</a></p>
-                </div>
-                <div class="card app-card">
-                    <div class="app-meta">
-                        <span class="badge badge-live">Live</span>
-                    </div>
-                    <h3>Pathway Devs Site</h3>
-                    <p>Public face of the firm. Systems architecture, intake and the four-word standard.</p>
-                    <p class="est-date">Live · pathwaydevs.tech</p>
-                </div>
-            </div>
-
-            <h2 class="section-title" style="font-size: 1.6rem; margin-bottom: 24px;">In Development</h2>
-            <div class="grid">
-                <div class="card app-card">
-                    <div class="app-meta">
-                        <span class="badge badge-dev">In Dev</span>
-                    </div>
-                    <h3>Round Table</h3>
-                    <p>Free, ads not subscriptions.</p>
-                    <p class="est-date">Launching this week · a.pathwaydevs.me</p>
-                </div>
-                <div class="card app-card">
-                    <div class="app-meta">
-                        <span class="badge badge-dev">In Dev</span>
-                    </div>
-                    <h3>AI Reality</h3>
-                    <p>Next up on the bench.</p>
-                    <p class="est-date">Coming next week · b.pathwaydevs.me</p>
-                </div>
-                <div class="card app-card">
-                    <div class="app-meta">
-                        <span class="badge badge-dev">In Dev</span>
-                    </div>
-                    <h3>Pathway Shortcuts</h3>
-                    <p>In the build queue.</p>
-                    <p class="est-date">Coming soon</p>
-                </div>
-                <div class="card app-card">
-                    <div class="app-meta">
-                        <span class="badge badge-dev">In Dev</span>
-                    </div>
-                    <h3>Pathway Photo Organizer</h3>
-                    <p>In the build queue.</p>
-                    <p class="est-date">Coming soon</p>
-                </div>
-                <div class="card app-card">
-                    <div class="app-meta">
-                        <span class="badge badge-dev">In Dev</span>
-                    </div>
-                    <h3>FIGHT</h3>
-                    <p>Fluid-gender assistant with a real companion mode. Built for people who already use work AIs as partners and get a brick wall. Assistant stays intact. Presentation is yours — woman, man, or trans. Knowledge base is already loaded. Not the widget on this site.</p>
-                    <p class="est-date">Est. deploy · end of December 2026 · conservative</p>
+                    <h3>Privacy &amp; Compliance Minded</h3>
+                    <p>We design with privacy in mind and treat your company data with care. We are not a law firm and we do not give legal advice.</p>
                 </div>
             </div>
         </section>
@@ -652,9 +204,11 @@
             <h2 class="section-title">The <span>Architecture of Recognition</span></h2>
             <div class="text-container">
                 <p>
-                    Every tech firm boasts about their servers, their software models, and their algorithmic computation speeds. At Pathway Devs, our primary operational engine doesn’t live in a cloud server rack—it operates between the ears of our founder.
+                    Every tech firm talks about its servers and its software. At Pathway Devs, our primary operational engine doesn&rsquo;t live in a server rack. It operates between the ears of our founder.
                     <br><br>
-                    Driven by a rare, high-octane pattern-recognition capability, the owner of Pathway Devs approaches corporate problem-solving less like a traditional programmer and more like a forensic systems architect. Where others see chaotic business data, fragmented workflows, and messy communication silos, he sees an underlying blueprint waiting to be optimized. This venture wasn't built to hand out generic software templates; it was forged to deliver absolute operational dominance for mid-sized enterprises. By blending an aggressive, forward-thinking technical instinct with raw business pragmatism, he ensures that Pathway Devs delivers elite corporate results without losing the fierce, personalized accountability of a dedicated technical partner. When you work with us, you are deploying a custom-engineered solution built under his direct oversight.
+                    The owner of Pathway Devs approaches business problems less like a traditional programmer and more like a forensic systems architect. Where others see chaotic data, fragmented workflows and communication silos, he sees an underlying blueprint waiting to be tidied up. This venture was not built to hand out generic software templates. It was built to give mid-sized businesses a technical partner who is personally accountable for the work. When you work with us, you are getting a custom-built solution made under his direct oversight.
+                    <br><br>
+                    We also do not hide behind borrowed credibility. We have no customer testimonials yet, so we show none. What we can show is the software: <a href="/apps/" class="inline-link">every app we run has a page</a> with a real screenshot and a link you can open yourself.
                 </p>
             </div>
         </section>
@@ -663,12 +217,15 @@
     <div id="page-contact" class="page-content">
         <section class="section">
             <h2 class="section-title">Communications <span>Control Room</span></h2>
+            <div class="text-container text-container-narrow" style="margin-bottom: 30px;">
+                <p>Send the shape of the problem. We will give you a straight read on whether Pathway Devs is the right fit, including when it is not.</p>
+            </div>
 
             <div class="control-room">
 
                 <a href="https://forms.gle/tg4dFUEeeTUJcjis7" class="action-button primary-glow" target="_blank" rel="noopener noreferrer">💼 Apply for a job</a>
                 <a href="https://forms.gle/ZPKAaLu6j978L9F78" class="action-button primary-glow" target="_blank" rel="noopener noreferrer">⚙️ Request an automation</a>
-                <a href="#intake-matrix" class="action-button primary-glow">📝 Access Digital Intake Diagnostics Form</a>
+                <a href="/#intake-matrix" class="action-button primary-glow">📝 Access Digital Intake Diagnostics Form</a>
 
                 <div class="source-tracker">
                     <label for="discovery-source">Where did you hear about Pathway Devs?</label>
@@ -685,34 +242,41 @@
                 <p class="est-date" style="text-align:center;">Our company VP and Office Manager, Francesca</p>
                 <a href="sms:2489792893" class="action-button">💬 Text Pathway Devs · 248-979-2893</a>
 
-                
             </div>
 
             <div id="intake-matrix" class="form-page-container">
-                <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfklYo2-PB6fWq4uiZsagjZxXLKv2xIdQiZKre-d7qEKbdMwQ/viewform?embedded=true" width="100%" height="1500" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+                <iframe title="Digital intake diagnostics form" src="https://docs.google.com/forms/d/e/1FAIpQLSfklYo2-PB6fWq4uiZsagjZxXLKv2xIdQiZKre-d7qEKbdMwQ/viewform?embedded=true" width="100%" height="1500" frameborder="0" marginheight="0" marginwidth="0" loading="lazy">Loading…</iframe>
             </div>
         </section>
     </div>
 
+    </main>
+
     <footer>
-        <p>&copy; 2026 Pathway Devs. All Rights Reserved.</p>
-        <p style="margin-top:16px;font-size:0.9rem;opacity:0.85">Privacy stays on this domain. No third-party policy frame.</p>
+        <p>&copy; 2026 Pathway Devs &middot; John Gault &amp; Sons. All Rights Reserved.</p>
+        <p style="margin-top:10px;">Business <a href="tel:2313201550">231-320-1550</a> &middot; Text <a href="sms:2489792893">248-979-2893</a></p>
+        <p style="margin-top:16px;font-size:0.9rem;opacity:0.85">Privacy stays on this domain. No third-party policy frame. Analytics only if you accept.</p>
+        <div class="footer-links">
+            <a href="/">Home</a>
+            <a href="/apps/">Apps</a>
+            <a href="/apps/policypilot/">PolicyPilot</a>
+            <a href="/apps/autobridge/">AutoBridge</a>
+            <a href="/apps/formation/">Pathway Formation</a>
+            <a href="/apps/round-table/">Round Table</a>
+            <a href="/apps/ai-reality/">AI Reality</a>
+            <a href="/apps/almost-uncensored-tv/">Almost Uncensored TV</a>
+            <button type="button" class="linklike" id="pd-cookie-settings">Cookie choice</button>
+        </div>
     </footer>
 
-        <elevenlabs-convai agent-id="agent_4801m1zkbdrkfh1rbtq5tjer7n0w"></elevenlabs-convai>
-        <script src="https://unpkg.com/@elevenlabs/convai-widget-embed" async type="text/javascript"></script>
-        <script>
-        function showPage(pageId) {
-            const pages = document.querySelectorAll('.page-content');
-            pages.forEach(page => page.classList.remove('active-page'));
-            const navLinks = document.querySelectorAll('nav a');
-            navLinks.forEach(link => link.classList.remove('active'));
-            const page = document.getElementById('page-' + pageId);
-            const nav = document.getElementById('nav-' + pageId);
-            if (page) page.classList.add('active-page');
-            if (nav) nav.classList.add('active');
-            window.scrollTo({top: 0, behavior: 'smooth'});
-        }
-        </script>
+    <div id="pd-consent" class="pd-consent" role="region" aria-label="Cookie notice" data-ga-id="G-H7XBWN26QY" hidden>
+        <p>Can we use cookies for anonymous usage analytics (Google Analytics)? Nothing loads unless you accept.</p>
+        <button type="button" class="pd-no" id="pd-consent-decline">Decline</button>
+        <button type="button" id="pd-consent-accept">Accept</button>
+    </div>
+
+    <elevenlabs-convai agent-id="agent_4801m1zkbdrkfh1rbtq5tjer7n0w"></elevenlabs-convai>
+    <script src="https://unpkg.com/@elevenlabs/convai-widget-embed" async type="text/javascript"></script>
+    <script src="/assets/js/site.js?v=20261011" defer></script>
 </body>
 </html>

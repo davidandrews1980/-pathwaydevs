@@ -1,0 +1,13 @@
+{
+  "_readme": "Single source of truth for the public company name. To switch on 'John Gault & Sons LLC' after the state filing is approved: set \"useLLC\" to true, run `node tools/build.mjs`, commit as 'Switch public name to John Gault & Sons LLC'. Nothing else changes.",
+  "siteUrl": "https://pathwaydevs.tech",
+  "brand": "Pathway Devs",
+  "legalName": "John Gault & Sons",
+  "legalNameLLC": "John Gault & Sons LLC",
+  "useLLC": false,
+  "gaMeasurementId": "G-H7XBWN26QY",
+  "businessPhone": "231-320-1550",
+  "textPhone": "248-979-2893",
+  "lastmod": "2026-10-11",
+  "capturedOn": "Oct 11, 2026"
+}

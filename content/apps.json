@@ -1,0 +1,232 @@
+{
+  "live": [
+    {
+      "slug": "policypilot",
+      "name": "PolicyPilot",
+      "status": "live",
+      "statusLabel": "Live",
+      "tagline": "Answer a short questionnaire. Get a privacy policy and terms on a hosted link.",
+      "url": "https://pathwaydevs.online",
+      "urlLabel": "pathwaydevs.online",
+      "metaTitle": "PolicyPilot | Privacy policy and terms generator | Pathway Devs",
+      "metaDesc": "PolicyPilot drafts a privacy policy, terms and more from a short questionnaire and hosts them on a link you can embed. Live, free to start.",
+      "cardBlurb": "Policy drafting on the web: questionnaire in, hosted policy documents out.",
+      "what": [
+        "PolicyPilot is for people who run a website or app and need the legal pages that go with it. You answer a short questionnaire about your business, the data you collect and the tools you use. Each answer turns into a clause in the document, so the result reflects what you told it instead of a template you have to rewrite.",
+        "It drafts privacy policies, terms of service, cookie policies, EULAs and return policies. Each document gets a hosted link and an embed snippet you can paste into your site or app footer. If your laws or your tools change, you regenerate the document and the hosted link updates."
+      ],
+      "bullets": [
+        "Questionnaire-driven drafting, one answer per clause",
+        "Privacy policies, terms, cookie policies, EULAs and return policies",
+        "A hosted link plus an embed snippet for each document",
+        "Regenerate when your site or the rules change",
+        "You can start free"
+      ],
+      "statusNote": "Live now. It opens on its own site, with sign-in, and you can start free.",
+      "built": [
+        "What it is for: getting the standard legal pages onto a small site or app without starting from a blank page.",
+        "How it is made: a questionnaire that turns each answer into a clause, plus hosted document pages that can be regenerated. It is a Pathway Devs product, built and run by us, the same as the other apps on this page."
+      ],
+      "goodToKnow": [
+        "PolicyPilot is a drafting tool. It is not legal advice and its output is not reviewed by a licensed attorney."
+      ],
+      "shot": "policypilot",
+      "shotAlt": "The PolicyPilot home page: headline 'Compliance policies, generated and hosted on autopilot' and four feature cards.",
+      "shotCaption": "pathwaydevs.online home page, desktop view.",
+      "category": "BusinessApplication"
+    },
+    {
+      "slug": "autobridge",
+      "name": "AutoBridge",
+      "status": "live",
+      "statusLabel": "Live",
+      "tagline": "A free AI command center for the browser, with MCP tools and user scripts.",
+      "url": "https://pathwaydevs.store",
+      "urlLabel": "pathwaydevs.store",
+      "metaTitle": "AutoBridge | Free AI browser command center | Pathway Devs",
+      "metaDesc": "AutoBridge is a free AI command center for browser work, with MCP tools and user scripts. Ads, not subscriptions. Live.",
+      "cardBlurb": "Free AI browser command center. MCP tools and user scripts. Ads, not subscriptions.",
+      "what": [
+        "Most AI tools stop at an answer. AutoBridge is built to bridge AI to the web: you use it to generate, manage and run complex web navigation and data extraction, using MCP tools and your own user scripts.",
+        "It is aimed at power users and operators who already live in the browser and want AI to do multi-step web work, not only talk about it."
+      ],
+      "bullets": [
+        "Connects AI to browser work: navigation and data extraction",
+        "Works with MCP tools and user scripts",
+        "Free to use. Advertising pays for it, so there is no subscription"
+      ],
+      "statusNote": "Live now. The app itself sits behind a free account, so the screenshot below is the public sign-in screen. We did not make an account just to photograph the inside, and we are not going to show you screens we cannot stand behind.",
+      "built": [
+        "What it is for: letting people who work in the browser point AI at real web tasks, without paying a subscription to do it. Advertising covers the cost.",
+        "It is a Pathway Devs product, built and run by us."
+      ],
+      "goodToKnow": [
+        "We do not publish usage numbers for AutoBridge, because we have not verified any we would be willing to put on a public page."
+      ],
+      "shot": "autobridge",
+      "shotAlt": "The AutoBridge sign-in screen with a Continue with Google button and email and password fields. No account details are filled in.",
+      "shotCaption": "pathwaydevs.store sign-in screen, desktop view. Nothing is typed into the form.",
+      "category": "UtilitiesApplication"
+    },
+    {
+      "slug": "formation",
+      "name": "Pathway Formation",
+      "status": "live",
+      "statusLabel": "Live",
+      "tagline": "An LLC formation desk with the state fees shown as their own line.",
+      "url": "https://pathwaydevs.software",
+      "urlLabel": "pathwaydevs.software",
+      "metaTitle": "Pathway Formation | LLC formation desk | Pathway Devs",
+      "metaDesc": "Pathway Formation prepares your LLC articles with a wizard and a public 50-state fee table, then files them. Live. Not a law firm.",
+      "cardBlurb": "LLC formation desk. A wizard prepares your articles and the 50-state fee table is public.",
+      "what": [
+        "Pathway Formation helps you set up an LLC. A wizard collects the state, the company name, the address, your registered agent and the members, then prepares the articles of organization. You pay the state what the state charges, and the desk files the paperwork.",
+        "The 50-state fee table is public and shows each state's filing fee, the name of the document, the agency and the typical processing time. Optional extras are shown as separate line items, and the desk does not promise filing dates it cannot keep."
+      ],
+      "bullets": [
+        "Step-by-step formation wizard",
+        "Public 50-state table of filing fees, documents and agencies",
+        "State fee passed through as its own line",
+        "Guides, plus a customer desk for your orders and documents",
+        "Takes real orders today"
+      ],
+      "statusNote": "Live and taking orders.",
+      "built": [
+        "What it is for: making company formation less opaque, with the state's fee visible up front.",
+        "How it is made: a wizard, a public 50-state fee table, guides, a customer desk and an operator queue, with orders stored on the server rather than in your browser. It is a Pathway Devs product, built and run by us."
+      ],
+      "goodToKnow": [
+        "Pathway Formation is not a law firm and is not a licensed attorney. It prepares and files forms. It does not give legal advice.",
+        "State fees change. Check the live fee table in the app before you rely on any number."
+      ],
+      "shot": "formation",
+      "shotAlt": "The Pathway Formation fee table titled 'What the state charges', listing each state's filing fee, document, agency and processing time.",
+      "shotCaption": "pathwaydevs.software 50-state fee table, desktop view.",
+      "category": "BusinessApplication"
+    },
+    {
+      "slug": "round-table",
+      "name": "Round Table",
+      "status": "live",
+      "statusLabel": "Live · New",
+      "tagline": "Seat a table of AI agents. You write each seat's job and personality.",
+      "url": "https://a.pathwaydevs.me",
+      "urlLabel": "a.pathwaydevs.me",
+      "metaTitle": "Round Table | A table of AI agents you direct | Pathway Devs",
+      "metaDesc": "Round Table: seat a table of AI agents, each with its own job, personality and lean, plus a shared idea board. New and live.",
+      "cardBlurb": "A table of AI seats you set up one by one, with a shared idea board.",
+      "what": [
+        "Round Table is a space for open talk or for a project you want to finish. You seat the table yourself. Each seat has a job title, job instructions and personality instructions, and sliders that set how hard that seat leans toward its position.",
+        "The idea board is open to you and to the seats. You can step out, and the cast is told that you left. You bring your own API keys, and a seat with no key stays quiet. A connected MCP server can put its tools on the table."
+      ],
+      "bullets": [
+        "A job title, job instructions and personality instructions for every seat",
+        "Sliders for how far each seat leans",
+        "A shared idea board",
+        "Step out, and the cast is told",
+        "Bring your own API keys",
+        "Free, ads not subscriptions"
+      ],
+      "statusNote": "Live now and new. It is a full app with sign-in, and you will need your own model API keys before a seat can speak.",
+      "built": [
+        "What it is for: working through an open conversation or a project with a cast of AI seats you set up yourself, where the job and the personality of each seat are two separate instructions.",
+        "How it is made: a full web application with accounts, saved sittings and a connection point for MCP servers, not a static demo page. It is a Pathway Devs product, built and run by us."
+      ],
+      "goodToKnow": [
+        "Round Table is free and carries ads. Unsold ad space shows house ads for other Pathway apps."
+      ],
+      "shot": "round-table",
+      "shotAlt": "The Round Table home page: headline 'Stay at the table.' with a description of seats, sliders and the idea board.",
+      "shotCaption": "a.pathwaydevs.me home page, desktop view.",
+      "category": "UtilitiesApplication"
+    },
+    {
+      "slug": "ai-reality",
+      "name": "AI Reality",
+      "status": "live",
+      "statusLabel": "Live",
+      "tagline": "A room where several linked AIs work one problem, using your own key.",
+      "url": "https://b.pathwaydevs.me",
+      "urlLabel": "b.pathwaydevs.me",
+      "metaTitle": "AI Reality | Multi-AI chat room, bring your own key | Pathway Devs",
+      "metaDesc": "AI Reality is a room where several AIs with their own roles share one conversation, with an idea board. Bring your own key. Live.",
+      "cardBlurb": "A multi-AI chat room. Several linked AIs, an idea board, your own API key.",
+      "what": [
+        "AI Reality is a shared room where several AIs, each with its own role, instructions and personality, talk in one conversation. You watch the thinking happen instead of waiting on one reply.",
+        "It also has an idea board, a configuration page for each agent, private side channels between AIs, and a watch-only mode. The room shows a token budget so you can see how much of it you have used."
+      ],
+      "bullets": [
+        "Several linked AIs in one shared conversation",
+        "Per-agent roles, instructions and personalities",
+        "An idea board you can use even before you add a key",
+        "Private AI-to-AI side channels and a watch-only mode",
+        "Bring your own API key (OpenRouter recommended)"
+      ],
+      "statusNote": "Live now. You add your own API key to chat. Until you do, you can still set up agents and use the idea board.",
+      "built": [
+        "What it is for: seeing several AIs with different roles work the same problem in the open, on a key and a budget that belong to you.",
+        "How it is made: the app has no shared key behind it. Every visitor brings their own, and it is saved in your browser. It travels over HTTPS with each message so our server can pass it to the model provider, and the app states that it is not logged or stored. Room messages, agent setups and ideas stay in your browser. It is a Pathway Devs product, built and run by us."
+      ],
+      "goodToKnow": [
+        "Using it costs whatever your own API provider charges for the tokens you use. The app suggests putting a spend limit on your key.",
+        "The privacy page inside the app explains how keys are handled. Read it before you paste a key."
+      ],
+      "shot": "ai-reality",
+      "shotAlt": "The AI Reality room, empty, with an Add API key prompt, a token budget meter and a message box.",
+      "shotCaption": "b.pathwaydevs.me room, desktop view, with no key added and nothing typed.",
+      "category": "UtilitiesApplication"
+    },
+    {
+      "slug": "almost-uncensored-tv",
+      "name": "Almost Uncensored TV",
+      "status": "live",
+      "statusLabel": "Live",
+      "tagline": "A video platform with light restrictions and two hard lines.",
+      "url": "https://video.pathwaydevs.org",
+      "urlLabel": "video.pathwaydevs.org",
+      "metaTitle": "Almost Uncensored TV | Video platform | Pathway Devs",
+      "metaDesc": "Almost Uncensored TV is a video platform with broad creative freedom and two hard exclusions: minors in sexual content, and sexual violence.",
+      "cardBlurb": "A video platform with broad creative freedom, and two hard exclusions.",
+      "what": [
+        "Almost Uncensored TV is a video platform in the style of the big video sites, with far lighter restrictions on what people can post. The rules are short, and there are two hard lines: no sexual content involving minors, and no sexual violence.",
+        "Visitors can browse by recently added or trending, search videos and channels, and sign in to take part. A sensitive-content setting is built in, and it shows 'warned' by default."
+      ],
+      "bullets": [
+        "Browse by recently added or trending, plus search",
+        "Two hard exclusions: minors in sexual content, and sexual violence",
+        "Sensitive-content setting built in",
+        "Runs on PeerTube, an open-source video platform"
+      ],
+      "statusNote": "Live now. When we took the screenshot on Oct 11, 2026, the public listing showed no videos yet. We are showing it as it was.",
+      "built": [
+        "What it is for: a place to publish video with broad creative freedom and a short, clear set of exclusions.",
+        "How it is made: we run our own instance of PeerTube, the open-source, self-hosted video platform. The page footer credits PeerTube. We configured it, branded it and wrote the short rules; we did not write the video software. It is a Pathway Devs product."
+      ],
+      "goodToKnow": [
+        "Content here is lightly restricted, so it may not suit everyone, and it is not meant for children."
+      ],
+      "shot": "almost-uncensored-tv",
+      "shotAlt": "The Browse videos page of Almost Uncensored TV with Recently added and Trending buttons and a 'No results' message.",
+      "shotCaption": "video.pathwaydevs.org browse page, desktop view, with the side menu collapsed. The public listing was empty at capture time.",
+      "category": "MultimediaApplication"
+    }
+  ],
+  "coming": [
+    {
+      "name": "Pathway Shortcuts",
+      "blurb": "In the build queue. No date."
+    },
+    {
+      "name": "Pathway Photo Organizer",
+      "blurb": "In the build queue. An Android test build exists but it is not public. No date."
+    },
+    {
+      "name": "Pathway Policy",
+      "blurb": "In the build queue. No date."
+    },
+    {
+      "name": "FIGHT",
+      "blurb": "In development. No date."
+    }
+  ]
+}
