@@ -1,0 +1,52 @@
+[
+ {
+  "app": "formation", "slug": "how-to-form-an-llc-online",
+  "appUrl": "https://pathwaydevs.software", "appLabel": "pathwaydevs.software",
+  "linkText": "How to form an LLC online",
+  "title": "How to Form an LLC Online: The Steps, the State Fee, and What to Have Ready",
+  "desc": "Form your LLC online with a guided filing desk. Answer the wizard, and we file. Your state's fee is passed through with no markup; optional add-ons are priced separately.",
+  "h1": "How to form an LLC online",
+  "intro": "You can form an LLC online without a law firm. Your state wants a short set of facts and its filing fee. This page covers what to have ready and how Pathway Formation walks you through it.",
+  "sections": [
+   {"h": "What to have ready", "ol": ["The state where you're forming", "Your LLC name, plus a backup in case the first is taken", "A business address", "A registered agent. You name your own.", "The names of your members"]},
+   {"h": "Steps", "olHtml": ["<strong>Answer the wizard.</strong> State, name, address, registered agent, members.", "<strong>Pay at checkout.</strong> Payment runs through Stripe. The state fee is passed through at what your state charges, with no markup. Optional add-ons (such as EIN help, expedite, reminders, or the Command desk) are priced separately. Review your cart before you pay and keep only what you need.", "<strong>We file.</strong> Your packet goes to our filing desk, and you keep the documents."]},
+   {"h": "What the state fee is", "p": ["Every state sets its own fee. Michigan charges $50, Montana $35, and Massachusetts $500. We pass the fee through as-is. The state fee is one part of your total; any add-ons in your cart are charged on top of it.", "Expedite moves your filing to the front of our queue. Each state sets its own processing time."]},
+   {"h": "Start your filing", "p": ["Open the LLC filing desk at pathwaydevs.software."], "cta": "Open the LLC filing desk", "phone": true}
+  ],
+  "fine": "Not a licensed attorney. Not legal advice. Pathway Formation prepares and files the documents you provide. Legal compliance and your choices about entity type, structure, and taxes remain your responsibility."
+ },
+ {
+  "app": "policypilot", "slug": "app-store-privacy-policy",
+  "appUrl": "https://pathwaydevs.online", "appLabel": "pathwaydevs.online",
+  "linkText": "Privacy policy for App Store and Google Play apps",
+  "title": "Privacy Policy for Your App Store or Google Play App: Get a Link Before You Submit",
+  "desc": "Apple and Google Play both require a privacy policy link for every app, in the store listing and inside the app. Create a hosted policy URL for your app with PolicyPilot. Start free.",
+  "h1": "Get a privacy policy link for your App Store or Google Play listing",
+  "intro": "Apple's App Review Guidelines (5.1.1) say all apps must include a link to their privacy policy in the App Store Connect metadata field and within the app, and App Store Connect lists the Privacy Policy URL as required for iOS and macOS apps. Google Play's User Data policy says all apps must post a privacy policy link in the designated Play Console field, plus a link or the text within the app itself. Here's what to line up first.",
+  "sections": [
+   {"h": "Before you submit", "ol": ["Your app name and a short description of what it does", "A list of the data your app collects and the services it uses", "A public URL for your privacy policy (Google Play asks for an active, publicly accessible, non-geofenced URL, not a PDF)", "A support or contact address for users"]},
+   {"h": "Why the policy should live at a stable URL", "p": ["Both stores ask for a URL in a listing field, and Google Play specifically rules out PDFs. A hosted page gives you one address to paste into App Store Connect, the Play Console, and your app's settings screen, and it stays the same when you update the text."]},
+   {"h": "How PolicyPilot helps", "p": ["Answer a few questions about your app, what it collects, and the third-party tools inside it. PolicyPilot generates and hosts the policy, so you have a link to drop into your listing and your app. You're still responsible for checking that it covers what each store's policy asks for, such as what data you collect, who you share it with, and how users can request deletion."]},
+   {"h": "Pricing", "p": ["PolicyPilot is freemium. Begin at no cost and upgrade only when you need to: Free, $10, $15, or $30."]},
+   {"h": "Start free", "p": ["Create your app's privacy policy at pathwaydevs.online."], "cta": "Start free on PolicyPilot"}
+  ],
+  "fine": "Not legal advice. Not reviewed by a licensed attorney. Whether Apple or Google accepts your policy is your responsibility, as is legal compliance."
+ },
+ {
+  "app": "policypilot", "slug": "contact-form-privacy-policy",
+  "appUrl": "https://pathwaydevs.online", "appLabel": "pathwaydevs.online",
+  "linkText": "Privacy policy for website contact and lead forms",
+  "title": "Privacy Policy for Your Website Contact Form or Lead Form",
+  "desc": "Collecting names and emails through a contact or lead form? Add a hosted privacy policy link next to the form. Start free with PolicyPilot.",
+  "h1": "A privacy policy for the form on your website",
+  "intro": "When a visitor types their name, email, or phone number into your contact form, they're handing you personal information. A clear privacy policy linked near the form tells them what you'll do with it. Here's a simple way to get one in place.",
+  "sections": [
+   {"h": "What to sort out first", "ol": ["Which fields your form asks for", "Where submissions go (inbox, CRM, email tool)", "A link to your privacy policy, placed by the submit button or in your footer", "What happens after someone submits"]},
+   {"h": "Why link a hosted page instead of pasting text into your site", "p": ["One hosted page can serve every form, popup, and landing page you run. When you change tools or add a field, you update the policy in one place."]},
+   {"h": "How PolicyPilot helps", "p": ["Tell PolicyPilot about your business, the details your forms collect, and the tools that receive them. PolicyPilot generates and hosts the policy, giving you a link to add beside your form."]},
+   {"h": "Pricing", "p": ["PolicyPilot is freemium. Start at no charge and step up only if you need more: Free, $10, $15, or $30."]},
+   {"h": "Start free", "p": ["Set up your form's privacy policy at pathwaydevs.online."], "cta": "Start free on PolicyPilot"}
+  ],
+  "fine": "Not legal advice. Not reviewed by a licensed attorney. Making sure your policy fits your forms and business, and legal compliance, are your responsibility."
+ }
+]

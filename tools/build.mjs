@@ -9,6 +9,10 @@ import { fileURLToPath } from 'node:url';
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const cfg = JSON.parse(fs.readFileSync(path.join(root, 'site.config.json'), 'utf8'));
 const data = JSON.parse(fs.readFileSync(path.join(root, 'content/apps.json'), 'utf8'));
+const guides = JSON.parse(fs.readFileSync(path.join(root, 'content/guides.json'), 'utf8'));
+const TAVUS = `    <script src="https://unpkg.com/@tavus/widget@latest"></script>
+    <tavus-widget deployment-id="e3816ac1-c55a-4c39-84a2-bf463147d454"></tavus-widget>
+`;
 const homeTpl = fs.readFileSync(path.join(root, 'content/home.html'), 'utf8');
 
 const legal = cfg.useLLC ? cfg.legalNameLLC : cfg.legalName;
@@ -135,10 +139,8 @@ ${header('landing')}
 ${body}
     </main>
 ${footer()}
-    <elevenlabs-convai agent-id="agent_4801m1zkbdrkfh1rbtq5tjer7n0w"></elevenlabs-convai>
-    <script src="https://unpkg.com/@elevenlabs/convai-widget-embed" async type="text/javascript"></script>
     <script src="/assets/js/site.js?v=${V}" defer></script>
-</body>
+${TAVUS}</body>
 </html>
 `;
 }
@@ -206,7 +208,7 @@ ${data.coming.map(soonCard).join('\n')}
     </main>
 ${footer()}
     <script src="/assets/js/site.js?v=${V}" defer></script>
-</body>
+${TAVUS}</body>
 </html>
 `;
 }
@@ -285,7 +287,7 @@ ${header('apps')}
         </section>
     </div>
 
-    <aside class="other-apps" aria-label="Other apps">
+${guidePanel(a)}    <aside class="other-apps" aria-label="Other apps">
         <h2>More from Pathway Devs</h2>
         <ul>${others}</ul>
     </aside>
@@ -297,14 +299,68 @@ ${header('apps')}
     </main>
 ${footer()}
     <script src="/assets/js/site.js?v=${V}" defer></script>
-</body>
+${TAVUS}</body>
+</html>
+`;
+}
+
+
+function guidePanel(a) {
+  const g = guides.filter((x) => x.app === a.slug);
+  if (!g.length) return '';
+  return `    <aside class="other-apps" aria-label="Guides">
+        <h2>Guides</h2>
+        <ul>${g.map((x) => `<li><a href="/apps/${x.app}/${x.slug}/">${esc(x.linkText)}</a></li>`).join('')}</ul>
+    </aside>
+`;
+}
+function buildGuide(g) {
+  const a = data.live.find((x) => x.slug === g.app);
+  const canonical = `/apps/${g.app}/${g.slug}/`;
+  const ld = {
+    '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: abs('/') },
+      { '@type': 'ListItem', position: 2, name: 'Apps', item: abs('/apps/') },
+      { '@type': 'ListItem', position: 3, name: a.name, item: abs(`/apps/${a.slug}/`) },
+      { '@type': 'ListItem', position: 4, name: g.h1, item: abs(canonical) },
+    ],
+  };
+  const sec = g.sections.map((s) => `        <section class="panel">
+            <h2>${esc(s.h)}</h2>
+            ${s.p ? paras(s.p) : ''}${s.ol ? `<ol>${list(s.ol)}</ol>` : ''}${s.olHtml ? `<ol>${s.olHtml.map((t) => `<li>${t}</li>`).join('')}</ol>` : ''}
+            ${s.cta ? `<p style="margin-top:18px;"><a class="cta-btn" href="${g.appUrl}" target="_blank" rel="noopener noreferrer">${esc(s.cta)} &nearr;</a></p>` : ''}
+            ${s.phone ? `<p style="margin-top:12px;">Questions? Business: <a href="tel:2313201550">${cfg.businessPhone}</a></p>` : ''}
+        </section>`).join('\n');
+  return head({ title: g.title, desc: g.desc, canonical, ogImage: `/assets/og/${a.slug}.jpg`, ogType: 'article',
+    extra: `    <script type="application/ld+json">${JSON.stringify(ld)}</script>\n` }) + `
+<body>
+
+${header('apps')}
+    <main id="main">
+    <nav class="crumbs" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li><a href="/apps/">Apps</a></li><li><a href="/apps/${a.slug}/">${esc(a.name)}</a></li><li aria-current="page">${esc(g.linkText)}</li></ol></nav>
+
+    <section class="app-hero">
+        <h1>${esc(g.h1)}</h1>
+        <p class="lede">${esc(g.intro)}</p>
+    </section>
+
+    <div class="app-body">
+${sec}
+        <section class="panel note">
+            <p><em>${esc(g.fine)}</em></p>
+        </section>
+    </div>
+    </main>
+${footer()}
+    <script src="/assets/js/site.js?v=${V}" defer></script>
+${TAVUS}</body>
 </html>
 `;
 }
 
 /* ---------------- sitemap + robots ---------------- */
 function buildSitemap() {
-  const urls = ['/', '/apps/', ...data.live.map((a) => `/apps/${a.slug}/`)];
+  const urls = ['/', '/apps/', ...data.live.map((a) => `/apps/${a.slug}/`), ...guides.map((g) => `/apps/${g.app}/${g.slug}/`)];
   return `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${urls.map((u) => `  <url>\n    <loc>${abs(u)}</loc>\n    <lastmod>${cfg.lastmod}</lastmod>\n  </url>`).join('\n')}
@@ -324,6 +380,7 @@ for (const a of data.live) {
 write('index.html', buildHome());
 write('apps/index.html', buildAppsIndex());
 for (const a of data.live) write(`apps/${a.slug}/index.html`, buildApp(a));
+for (const g of guides) write(`apps/${g.app}/${g.slug}/index.html`, buildGuide(g));
 write('sitemap.xml', buildSitemap());
 write('robots.txt', `User-agent: *\nAllow: /\n\nSitemap: ${abs('/sitemap.xml')}\n`);
 console.log(`built ${2 + data.live.length} pages; public name: ${legal}`);
