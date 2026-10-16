@@ -91,9 +91,14 @@ function footer() {
     <footer>
         <p>&copy; 2026 Pathway Devs &middot; ${esc(legal)}. All Rights Reserved.</p>
         <p style="margin-top:10px;">Business <a href="tel:2313201550">${cfg.businessPhone}</a> &middot; Text <a href="sms:2489792893">${cfg.textPhone}</a></p>
-        <p style="margin-top:16px;font-size:0.9rem;opacity:0.85">Privacy stays on this domain. No third-party policy frame. Analytics only if you accept.</p>
+        <p style="margin-top:16px;font-size:0.9rem;opacity:0.85">Our policies are hosted on this domain. Analytics load only after you accept.</p>
         <div class="footer-links">
             ${links}
+            <a href="/privacy.html">Privacy</a>
+            <a href="/terms.html">Terms</a>
+            <a href="/cookies.html">Cookies</a>
+            <a href="/policies/">App policies</a>
+            <a href="mailto:support@pathwaydevs.org">support@pathwaydevs.org</a>
             <button type="button" class="linklike" id="pd-cookie-settings">Cookie choice</button>
         </div>
     </footer>
@@ -166,7 +171,7 @@ function soonCard(c) {
 }
 function buildAppsIndex() {
   const title = 'Apps | Working software from Pathway Devs';
-  const desc = 'Six live apps built and run by Pathway Devs, each with a real screenshot, an honest status and a link to the app.';
+  const desc = 'Six live apps built and run by Pathway Devs, each with a real screenshot, its current status and a link to the app.';
   const ld = {
     '@context': 'https://schema.org', '@type': 'CollectionPage', name: 'Pathway Devs apps', url: abs('/apps/'),
     hasPart: data.live.map((a) => ({ '@type': 'WebPage', name: a.name, url: abs(`/apps/${a.slug}/`) })),
@@ -181,9 +186,9 @@ ${header('apps')}
         <h1 class="section-title">The <span>Bench</span></h1>
         <div class="text-container text-container-narrow" style="margin-bottom: 30px;">
             <p>
-                We do not have customer testimonials yet, so we are not going to show you any. What we can show is working software that we built and run ourselves.
+                Here is working software that we built and run ourselves.
                 <br><br>
-                Every app below has its own page with a real screenshot taken from the live app, its honest status, a plain-words description and a link to the real thing. We do not sell subscriptions on this site.
+                Every app below has its own page with a real screenshot taken from the live app, its current status, a plain-words description and a link to the real thing.
             </p>
         </div>
 
@@ -358,9 +363,32 @@ ${TAVUS}</body>
 `;
 }
 
+/* ---------------- policies index ---------------- */
+function buildPolicies() {
+  const apps = [['pathway-devs','Pathway Devs (this site)'],['llc-formation','Pathway Formation'],['autobridge','AutoBridge'],['round-table','Round Table'],['ai-reality','AI Reality'],['almost-uncensored-tv','Almost Uncensored TV']];
+  const rows = apps.map(([s,n]) => `                <div class="card"><h3>${esc(n)}</h3><p><a class="inline-link" href="/policies/${s}/privacy.html">Privacy</a> &middot; <a class="inline-link" href="/policies/${s}/terms.html">Terms</a> &middot; <a class="inline-link" href="/policies/${s}/cookies.html">Cookies</a></p></div>`).join('\n');
+  return `${head({ title: 'Policies | Pathway Devs', desc: 'Privacy, terms and cookie policies for Pathway Devs and its apps.', canonical: '/policies/', ogImage: '/assets/og/default.jpg' })}
+<body>
+${header('')}
+    <main>
+        <section class="section">
+            <h1 class="section-title">Our <span>Policies</span></h1>
+            <div class="text-container text-container-narrow" style="margin-bottom: 30px;"><p>Privacy, terms and cookie policies for this site and each app we run. Questions go to <a class="inline-link" href="mailto:support@pathwaydevs.org">support@pathwaydevs.org</a>.</p></div>
+            <div class="grid">
+${rows}
+            </div>
+        </section>
+    </main>
+${footer()}
+    <script src="/assets/js/site.js?v=${V}" defer></script>
+${TAVUS}</body>
+</html>
+`;
+}
+
 /* ---------------- sitemap + robots ---------------- */
 function buildSitemap() {
-  const urls = ['/', '/apps/', ...data.live.map((a) => `/apps/${a.slug}/`), ...guides.map((g) => `/apps/${g.app}/${g.slug}/`)];
+  const urls = ['/', '/apps/', '/policies/', '/privacy.html', '/terms.html', '/cookies.html', ...data.live.map((a) => `/apps/${a.slug}/`), ...guides.map((g) => `/apps/${g.app}/${g.slug}/`)];
   return `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${urls.map((u) => `  <url>\n    <loc>${abs(u)}</loc>\n    <lastmod>${cfg.lastmod}</lastmod>\n  </url>`).join('\n')}
@@ -381,6 +409,7 @@ write('index.html', buildHome());
 write('apps/index.html', buildAppsIndex());
 for (const a of data.live) write(`apps/${a.slug}/index.html`, buildApp(a));
 for (const g of guides) write(`apps/${g.app}/${g.slug}/index.html`, buildGuide(g));
+write('policies/index.html', buildPolicies());
 write('sitemap.xml', buildSitemap());
 write('robots.txt', `User-agent: *\nAllow: /\n\nSitemap: ${abs('/sitemap.xml')}\n`);
 console.log(`built ${2 + data.live.length} pages; public name: ${legal}`);

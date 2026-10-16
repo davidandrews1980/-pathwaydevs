@@ -28,7 +28,7 @@
         "How it is made: a questionnaire that turns each answer into a clause, plus hosted document pages that can be regenerated. It is a Pathway Devs product, built and run by us, the same as the other apps on this page."
       ],
       "goodToKnow": [
-        "PolicyPilot is a drafting tool. It is not legal advice and its output is not reviewed by a licensed attorney."
+        "PolicyPilot is a drafting tool. Not legal advice. Not reviewed by a licensed attorney."
       ],
       "shot": "policypilot",
       "shotAlt": "The PolicyPilot home page: headline 'Compliance policies, generated and hosted on autopilot' and four feature cards.",
@@ -55,13 +55,13 @@
         "Works with MCP tools and user scripts",
         "Free to use. Advertising pays for it, so there is no subscription"
       ],
-      "statusNote": "Live now. The app itself sits behind a free account, so the screenshot below is the public sign-in screen. We did not make an account just to photograph the inside, and we are not going to show you screens we cannot stand behind.",
+      "statusNote": "Live now. The app itself sits behind a free account, so the screenshot below is the public sign-in screen, exactly as visitors see it.",
       "built": [
         "What it is for: letting people who work in the browser point AI at real web tasks, without paying a subscription to do it. Advertising covers the cost.",
         "It is a Pathway Devs product, built and run by us."
       ],
       "goodToKnow": [
-        "We do not publish usage numbers for AutoBridge, because we have not verified any we would be willing to put on a public page."
+        "We publish usage numbers for AutoBridge once they are verified."
       ],
       "shot": "autobridge",
       "shotAlt": "The AutoBridge sign-in screen with a Continue with Google button and email and password fields. No account details are filled in.",
@@ -81,7 +81,7 @@
       "cardBlurb": "LLC formation desk. A wizard prepares your articles and the 50-state fee table is public.",
       "what": [
         "Pathway Formation helps you set up an LLC. A wizard collects the state, the company name, the address, your registered agent and the members, then prepares the articles of organization. You pay the state what the state charges, and the desk files the paperwork.",
-        "The 50-state fee table is public and shows each state's filing fee, the name of the document, the agency and the typical processing time. Optional extras are shown as separate line items, and the desk does not promise filing dates it cannot keep."
+        "The 50-state fee table is public and shows each state's filing fee, the name of the document, the agency and the typical processing time. Optional extras are shown as separate line items, and the desk quotes typical processing times from each state."
       ],
       "bullets": [
         "Step-by-step formation wizard",
@@ -96,7 +96,7 @@
         "How it is made: a wizard, a public 50-state fee table, guides, a customer desk and an operator queue, with orders stored on the server rather than in your browser. It is a Pathway Devs product, built and run by us."
       ],
       "goodToKnow": [
-        "Pathway Formation is not a law firm and is not a licensed attorney. It prepares and files forms. It does not give legal advice.",
+        "Pathway Formation prepares and files forms. Not a law firm. Not legal advice.",
         "State fees change. Check the live fee table in the app before you rely on any number."
       ],
       "shot": "formation",
@@ -130,7 +130,7 @@
       "statusNote": "Live now and new. It is a full app with sign-in, and you will need your own model API keys before a seat can speak.",
       "built": [
         "What it is for: working through an open conversation or a project with a cast of AI seats you set up yourself, where the job and the personality of each seat are two separate instructions.",
-        "How it is made: a full web application with accounts, saved sittings and a connection point for MCP servers, not a static demo page. It is a Pathway Devs product, built and run by us."
+        "How it is made: a full web application with accounts, saved sittings and a connection point for MCP servers. It is a Pathway Devs product, built and run by us."
       ],
       "goodToKnow": [
         "Round Table is free and carries ads. Unsold ad space shows house ads for other Pathway apps."
@@ -200,10 +200,10 @@
       "statusNote": "Live now. When we took the screenshot on Oct 11, 2026, the public listing showed no videos yet. We are showing it as it was.",
       "built": [
         "What it is for: a place to publish video with broad creative freedom and a short, clear set of exclusions.",
-        "How it is made: we run our own instance of PeerTube, the open-source, self-hosted video platform. The page footer credits PeerTube. We configured it, branded it and wrote the short rules; we did not write the video software. It is a Pathway Devs product."
+        "How it is made: we run our own instance of PeerTube, the open-source, self-hosted video platform. The page footer credits PeerTube. We configured it, branded it and wrote the short rules; the video software is PeerTube's. It is a Pathway Devs product."
       ],
       "goodToKnow": [
-        "Content here is lightly restricted, so it may not suit everyone, and it is not meant for children."
+        "Content here is lightly restricted, and it is intended for adults 18 and over."
       ],
       "shot": "almost-uncensored-tv",
       "shotAlt": "The Browse videos page of Almost Uncensored TV with Recently added and Trending buttons and a 'No results' message.",
